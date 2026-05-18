@@ -99,16 +99,18 @@ function Different() {
                 onMouseEnter={() => setHoveredCard(idx)}
                 onMouseLeave={() => setHoveredCard(null)}
                 className={`rounded-3xl border border-gray-100 p-6 flex flex-col justify-between text-left transition-all duration-500 ease-in-out relative overflow-hidden cursor-pointer ${
-                  isExpanded 
-                    ? "lg:flex-[2.5] bg-[#03111a] text-white border-transparent shadow-xl" 
-                    : isAnyHovered 
-                      ? "lg:flex-[0.8] bg-white opacity-60 scale-[0.98]" 
+                  isExpanded
+                    ? "lg:flex-[2.5] bg-[#03111a] text-white border-transparent shadow-xl"
+                    : isAnyHovered
+                      ? "lg:flex-[0.8] bg-white opacity-60 scale-[0.98]"
                       : "lg:flex-[1] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.01)]"
                 }`}
               >
+                {/* Background gradient overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${card.color} transition-opacity duration-500 pointer-events-none ${isExpanded ? "opacity-100" : "opacity-0"}`} />
 
                 <div className="relative z-10 space-y-4 w-full">
+                  {/* Icon + number row */}
                   <div className="flex justify-between items-center w-full">
                     <div className={`p-2.5 rounded-xl transition-all duration-300 ${isExpanded ? "bg-white/10 text-white" : card.iconColor}`}>
                       {card.icon}
@@ -118,20 +120,34 @@ function Different() {
                     </span>
                   </div>
 
-                  <div className="space-y-2">
-                    <h3 className={`text-base font-black tracking-tight transition-colors duration-300 ${isExpanded ? "text-white text-lg" : "text-gray-900"}`}>
-                      {card.title}
-                    </h3>
-                    <p className={`text-xs text-gray-500 font-light leading-relaxed transition-all duration-300 max-w-[220px] ${isExpanded ? "lg:opacity-0 lg:max-h-0 lg:overflow-hidden" : "opacity-100"}`}>
-                      {card.shortDesc}
-                    </p>
-                  </div>
+                  {/* Title — always visible */}
+                  <h3 className={`font-black tracking-tight transition-all duration-300 ${isExpanded ? "text-white text-lg" : "text-gray-900 text-base"}`}>
+                    {card.title}
+                  </h3>
 
-                  <div className={`transition-all duration-500 ease-in-out text-xs leading-relaxed text-gray-300 font-light ${isExpanded ? "opacity-100 max-h-[200px] pt-1" : "opacity-0 max-h-0 overflow-hidden pointer-events-none"}`}>
+                  {/* Short desc — fades out as card expands */}
+                  <p
+                    className="text-xs text-gray-500 font-light leading-relaxed max-w-[220px] transition-opacity duration-200"
+                    style={{ opacity: isExpanded ? 0 : 1 }}
+                  >
+                    {card.shortDesc}
+                  </p>
+
+                  {/* Long desc — waits for expansion to finish before fading in */}
+                  <p
+                    className="text-xs leading-relaxed text-gray-300 font-light transition-opacity duration-300"
+                    style={{
+                      opacity: isExpanded ? 1 : 0,
+                      transitionDelay: isExpanded ? "400ms" : "0ms",
+                      position: isExpanded ? "relative" : "absolute",
+                      pointerEvents: isExpanded ? "auto" : "none"
+                    }}
+                  >
                     {card.longDesc}
-                  </div>
+                  </p>
                 </div>
 
+                {/* Footer */}
                 <div className={`w-full flex items-center justify-between border-t pt-4 mt-6 text-[10px] font-bold tracking-wider uppercase transition-colors duration-300 relative z-10 ${isExpanded ? "border-white/10 text-emerald-400" : "border-gray-50 text-gray-400"}`}>
                   <span>{isExpanded ? "Active Track" : "Hover to expand"}</span>
                   <ChevronRight size={12} className={`transition-transform duration-500 ${isExpanded ? "rotate-180 text-emerald-400" : ""}`} />

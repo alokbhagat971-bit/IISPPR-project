@@ -77,7 +77,7 @@ function Different() {
         
         <div className="space-y-4 max-w-2xl mx-auto">
           <div className="inline-block text-xs font-bold text-emerald-700 tracking-widest uppercase bg-emerald-50 border border-emerald-200/50 px-3 py-1 rounded-full">
-            Our Advantage
+            The IISPPR Difference
           </div>
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900">
             What Makes This <span className="text-emerald-600">Course Different?</span>

@@ -3,9 +3,9 @@ import lady from "../images/Lady.png";
 
 function Hero() {
   return (
-    <div className="w-full relative pb-16 group">
+    <div className="w-full relative pb-36 sm:pb-40 md:pb-16 group">
       {/* Main Responsive Grid Framework */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full relative z-10 pb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full relative z-10 pb-8 sm:pb-16 md:pb-20">
         
         {/* Left Typography Column */}
         <div className="lg:col-span-6 space-y-6 text-center lg:text-left z-10">
@@ -54,19 +54,10 @@ function Hero() {
         {/* Right Side Complex Graphic Canvas */}
         <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end w-full min-h-[480px] mt-8 lg:mt-0">
           
-          {/* ULTRA SMOOTH & SLOW GLOW:
-            - transition-all duration-1000 ease-in-out creates a beautifully slow, 1-second fading transition.
-            - base opacity is dropped to 10% so the bloom forward is distinct.
-          */}
           <div className="absolute w-72 h-72 rounded-full bg-[#f5b335] opacity-10 group-hover:opacity-100 blur-[65px] shadow-[0_0_60px_30px_#f5b335,0_0_140px_70px_rgba(245,179,53,0.6),0_0_240px_110px_rgba(245,179,53,0.3)] pointer-events-none top-1/2 left-1/2 lg:left-2/3 -translate-x-1/2 -translate-y-1/2 z-0 transition-all duration-1000 ease-in-out"></div>
           
           {/* Center Image Wrapper */}
           <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:mr-12 z-10 flex items-center justify-center">
-            
-            {/* FIX: OUTLINE WIPEOUT
-              Wrapping the image in an overflow-hidden mask guarantees that no native image borders 
-              or artifact outline rings escape and show up against your dark background.
-            */}
             <div className="w-full h-full rounded-full overflow-hidden bg-transparent shadow-2xl relative z-10">
               <img 
                 src={lady} 
@@ -75,8 +66,6 @@ function Hero() {
               />
             </div>
 
-            {/* Floating Vector Embedded Badges */}
-            
             {/* 1. Fieldwork - Top-Left */}
             <div className="absolute -top-6 -left-12 bg-[#0b1221]/85 border border-white/10 backdrop-blur-md px-3 py-2 rounded-xl flex items-center gap-2.5 shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-white/30 z-20 min-w-[160px] hidden sm:flex text-left">
               <div className="p-1.5 bg-emerald-500/10 text-emerald-400 rounded-lg shrink-0">
@@ -126,8 +115,8 @@ function Hero() {
 
       </div>
 
-      {/* Floating Overlapping Card Deck Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 transform translate-y-1/2 z-30 pt-4 px-4 sm:px-0">
+      {/* Floating Overlapping Card Deck Overlay — overlaps on ALL screen sizes */}
+      <div className="absolute bottom-0 left-0 right-0 transform translate-y-1/2 z-30 px-4 sm:px-0">
         <div className="bg-white rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.06)] border border-gray-100 p-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-100 text-center max-w-5xl mx-auto">
           
           {/* Card 1 */}

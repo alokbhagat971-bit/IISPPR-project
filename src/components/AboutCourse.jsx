@@ -25,13 +25,13 @@ function AboutCourse() {
   ];
 
   return (
-    <div className="w-full bg-white text-gray-900 -mt-20 md:-mt-28 pt-28 md:pt-36 pb-20 px-6 md:px-16 max-w-7xl mx-auto relative z-20">
+    <div className="w-full bg-white text-gray-900 -mt-0 pt-24 sm:pt-28 md:-mt-28 md:pt-36 pb-20 px-6 md:px-16 max-w-7xl mx-auto relative z-20">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start w-full">
         
         {/* Left Informational Column */}
         <div className="lg:col-span-7 space-y-6 text-left flex flex-col justify-between h-full">
           <div className="space-y-4">
-            {/* Pill Badge Target */}
+            {/* Pill Badge */}
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald-500/30 text-emerald-600 text-xs font-bold tracking-wide bg-emerald-50/50 w-fit">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
               ABOUT THE COURSE
@@ -43,17 +43,13 @@ function AboutCourse() {
               <span className="text-emerald-600">Research Fellowship</span>
             </h2>
             
-            {/* Descriptive Body Copy */}
+            {/* Body Copy */}
             <p className="text-sm sm:text-base text-gray-600 font-light leading-relaxed max-w-xl pt-2">
               Designed for students, researchers & working professionals who want to build strong research skills and make an impact in their field.
             </p>
           </div>
 
-          {/* FIX: FLOATING BANNER BOX
-            - group/banner: Isolates hover targeting rules to this box alone.
-            - transition-all duration-500 ease-out: Smooths the movement vector paths.
-            - hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-950/20: Lifts the banner 8px up and fires a deep drop-shadow on cursor entry.
-          */}
+          {/* Floating Banner */}
           <div className="bg-[#03111a] text-white p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-6 mt-12 w-full shadow-xl relative overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-950/20 group/banner">
             <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
             
@@ -77,14 +73,10 @@ function AboutCourse() {
           </div>
         </div>
 
-        {/* Right Info Checklist Panel Card Frame 
-          - group/card: Restricts trigger events to this feature container block area.
-          - hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)]: Pulls the entire feature module up and applies an ultra-soft, wide desktop shadow.
-        */}
+        {/* Right Info Checklist Panel */}
         <div className="lg:col-span-5 w-full lg:pt-8">
           <div className="bg-white border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.04)] rounded-3xl p-6 sm:p-8 space-y-6 text-left transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)] group/card">
             
-            {/* Dynamic Items Iteration Layout */}
             <div className="space-y-5">
               {highlights.map((item, index) => (
                 <div className="flex items-start gap-4 group/item" key={index}>
@@ -99,7 +91,7 @@ function AboutCourse() {
               ))}
             </div>
 
-            {/* Bottom Seats Counter Divider Wrapper */}
+            {/* Seats Counter */}
             <div className="pt-5 border-t border-gray-100/80 text-center">
               <span className="text-xs font-extrabold text-amber-700 bg-amber-50/80 border border-amber-200/30 px-5 py-2 rounded-full inline-block tracking-wide">
                 Only 4 seats remaining!

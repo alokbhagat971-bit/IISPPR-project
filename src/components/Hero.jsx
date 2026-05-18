@@ -31,7 +31,7 @@ function Hero() {
               <img className="w-8 h-8 rounded-full border-2 border-[#020710] object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=60&q=80" alt="scholar" />
             </div>
             <p className="text-xs text-gray-400 text-left">
-              Join <span className="text-white font-bold">500+ scholars & researchers</span> worldwide
+              Join <span className="text-white font-bold">500+ policy experts & researchers</span>
             </p>
           </div>
           
@@ -43,9 +43,11 @@ function Hero() {
             >
               Explore Course &rarr;
             </a>
-            <button className="w-full sm:w-auto px-6 py-3.5 bg-transparent border border-white/10 text-white font-medium rounded-xl text-sm hover:bg-white/5 transition-all flex items-center justify-center gap-2">
-              <Play size={14} fill="white" /> Watch Video
-            </button>
+            <a
+              href="https://iisppracademy.com/curriculum"
+              className="w-full sm:w-auto px-6 py-3.5 bg-transparent border border-white/10 text-white font-medium rounded-xl text-sm hover:bg-white/5 transition-all flex items-center justify-center gap-2">
+              View Curriculum
+            </a>
           </div>
         </div>
 
